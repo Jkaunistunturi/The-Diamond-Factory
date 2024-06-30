@@ -13,14 +13,17 @@ namespace Stars
 
         {
             //one (slow and not reusable) way to print each other character in different color
+            Console.Write("                                             ");
+            Console.Write(" ");
             Console.ForegroundColor = ConsoleColor.Red; Console.Write("D");
-            Console.ForegroundColor = ConsoleColor.DarkYellow; Console.Write("I");
+            Console.ForegroundColor = ConsoleColor.DarkYellow; Console.Write("1");
             Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("A");
             Console.ForegroundColor = ConsoleColor.Green; Console.Write("M");
             Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("O");
             Console.ForegroundColor = ConsoleColor.Green; Console.Write("N");
             Console.ForegroundColor = ConsoleColor.Blue; Console.Write("D");
-            Console.ForegroundColor = ConsoleColor.Magenta; Console.Write("S\n");
+            Console.ForegroundColor = ConsoleColor.Magenta; Console.Write("5\n");
+            Console.Write("                                 ");
             //Resets the color to default==white
             Console.ResetColor();
 
@@ -31,8 +34,9 @@ namespace Stars
             foreach (var item in Enum.GetValues(typeof(ConsoleColor)))
             {
 
-                 Console.ForegroundColor = (ConsoleColor)item;
-                 Console.Write("_");
+                Console.ForegroundColor = (ConsoleColor)item;
+                Console.Write(" ");
+                Console.Write("_");
 
             }
             Console.WriteLine(" ");
@@ -43,15 +47,15 @@ namespace Stars
 
             
 
-            //this prints every other char in different colour, took it from stackoverflow 
-            //and modified it a bit
-            //you could put a "image" here as well
+            //this prints every other char in different colour, this is from stackoverflow, 
+            //modified it a bit.
+            //you could put an "image" here as well
             string[] str = new string[]
               {
-          
-            " Print diamonds and get rich!",
-            " But remember not to get too greedy...",
-            "                                      ",
+           
+           "Print some diamonds and get rich! ",
+           "But remember not to get too greedy...",
+            "                                    ",
             };
 
             var index = 2;
@@ -78,20 +82,39 @@ namespace Stars
             Console.ForegroundColor = (ConsoleColor)colorIndex;
             Console.ResetColor();
 
+
+
+
             //user inputs
+
+            var diamondWord = "diamonds";
+            var bigWord = "big";
+            var manyWord = "many";
+
             Console.WriteLine(" ");
-            Console.WriteLine("How big diamonds would you like to print? Type a number between 3 or greater: ");
+            Console.WriteLine(" ");
+            //One way to show one word in different color
+            Console.Write($"How ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write($"{bigWord} ");
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write($"{diamondWord}");
+            Console.ResetColor();
+            Console.Write($" would you like to print? Type a number 3 or greater: ");
             int n = Convert.ToInt32(Console.ReadLine());
 
-            if (n > 100)
-            {
-                Console.WriteLine("Our factory does not make that big diamonds...");
-            }
+
 
             Console.WriteLine(" ");
 
 
-            Console.WriteLine("How many diamonds would you like to print? Type a number: ");
+            Console.Write("How ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write($"{manyWord} ");
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write($"{diamondWord}");
+            Console.ResetColor();
+            Console.Write($" would you like to print? Type a number: ");
             int howMany = Convert.ToInt32(Console.ReadLine());
 
 
